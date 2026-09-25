@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbfaf8" />
+    <meta name="description" content="Маленькая шуточная очередь к Валентине. Какой талон выдать Славе — решает Валентина." />
+    <title>Очередь к Валентине</title>
+    <link rel="icon" href="assets/heart.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="invitation" aria-labelledby="page-title">
+        <div class="content">
+          <p class="hand-note intro-note">Хорошие люди всегда<br />в приоритете <span aria-hidden="true">♡</span></p>
+
+          <h1 id="page-title">Очередь<br />к Валентине<span class="title-heart" aria-hidden="true">♡</span></h1>
+          <p class="lead">Выбери, какой талон выдать Славе</p>
+
+          <div class="choices" aria-label="Выбор талона">
+            <button class="choice" type="button" data-choice="tea">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 28h36v11a15 15 0 0 1-15 15h-6a15 15 0 0 1-15-15V28Zm36 3h6a7 7 0 0 1 0 14h-7M8 57h42M21 8c-5 6 5 8 0 14m12-14c-5 6 5 8 0 14" /></svg>
+              <span>На чай</span>
+            </button>
+            <button class="choice" type="button" data-choice="coffee">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 28h36v11a15 15 0 0 1-15 15h-6a15 15 0 0 1-15-15V28Zm36 3h6a7 7 0 0 1 0 14h-7M8 57h42M25 10c-4 5 4 7 0 12m10-12c-4 5 4 7 0 12" /></svg>
+              <span>На кофе</span>
+            </button>
+            <button class="choice" type="button" data-choice="cinema">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 24h38l-4 33H17l-4-33ZM8 24h48M18 24l-4-12 10-4 4 16m8 0 4-16 10 4-4 12M24 8l-3 16M40 8l3 16" /></svg>
+              <span>В кино</span>
+            </button>
+          </div>
+
+          <button class="surprise" id="surprise" type="button">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 4 18 10v20L24 44 6 34V14L24 4Zm0 20L6 14m18 10 18-10M24 24v20M17 17h.01M32 16h.01M31 29h.01M36 34h.01" /></svg>
+            <span>Случайный выбор</span>
+          </button>
+          <p class="surprise-options">Каток · покушать · прогулка · выставка · боулинг</p>
+
+          <div class="official">
+            <span class="official-line" aria-hidden="true"></span>
+            <svg class="tooth" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6c-4-3-11-3-14 1-4 6-1 11 1 16 2 5 2 11 6 11 3 0 3-8 7-8s4 8 7 8c4 0 4-6 6-11 2-5 5-10 1-16-3-4-10-4-14-1Z" /></svg>
+            <span class="official-line" aria-hidden="true"></span>
+            <a href="https://superdent.by/vrachi/shherbakova-valentina-andreevna/" target="_blank" rel="noopener noreferrer">Запись к стоматологу <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="visual">
+          <div class="portrait-frame">
+            <img src="assets/valentina.jpg" alt="Портрет Валентины" width="640" height="640" />
+          </div>
+          <p class="hand-note visual-note">Рада видеть тебя здесь <span aria-hidden="true">♡</span></p>
+          <div class="ticket-preview" aria-hidden="true">
+            <div>
+              <strong>ТАЛОН № 001</strong>
+              <span>Повод выбираешь ты</span>
+              <small>Дата: когда тебе удобно</small>
+            </div>
+            <div class="ticket-preview-stub">♡<br /><span>Лучшие разговоры<br />не по расписанию</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="ticket-dialog" aria-labelledby="ticket-title">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Закрыть талон">×</button>
+      <div class="ticket-main">
+        <p class="ticket-number">ТАЛОН № 001</p>
+        <h2 id="ticket-title">На чай со Славой</h2>
+        <div class="ticket-rule"></div>
+        <p><span class="ticket-symbol" aria-hidden="true">◷</span> Дата: когда тебе удобно</p>
+        <p><span class="ticket-symbol" aria-hidden="true">♡</span> Отмена: в любой момент</p>
+        <div class="ticket-actions">
+          <a id="telegram-link" class="telegram-button" href="https://t.me/vostroslava" target="_blank" rel="noopener noreferrer">
+            Открыть чат со Славой
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 3-4 18-5-7-6 3 2-6L21 3ZM12 14l9-11" /></svg>
+          </a>
+          <button id="reroll" class="reroll" type="button" hidden>Другой вариант</button>
+        </div>
+        <p class="ticket-hint">Сообщение откроется черновиком — отправлять его решаешь ты.</p>
+      </div>
+      <div class="ticket-stub"><span aria-hidden="true">♡</span><p>Лучшие<br />разговоры<br />не по<br />расписанию</p></div>
+    </dialog>
+
+    <noscript><p class="noscript">Для выбора талона нужен JavaScript. Ты всё равно можешь <a href="https://t.me/vostroslava">написать Славе в Telegram</a>.</p></noscript>
+  </body>
+</html>
